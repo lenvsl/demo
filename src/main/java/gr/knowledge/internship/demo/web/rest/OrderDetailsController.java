@@ -71,9 +71,7 @@ public class OrderDetailsController {
 
 
 
-
     /* 6 */
-
     @GetMapping("/top_selling_products_of_the_week")
     public Map<Long, List<Long>> getProductsByDates(@RequestParam("startDate") @DateTimeFormat(pattern="yyyy-MM-dd") Date startDate,
                                                         @RequestParam("endDate") @DateTimeFormat(pattern="yyyy-MM-dd") Date endDate) {

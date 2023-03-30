@@ -162,9 +162,9 @@ public class OrderDetailsService {
 
     public Map<Long,List<Long>> getProductsByDates(Date startDate, Date endDate) {
 
-        Map<Long, Integer> productSalesCount = new HashMap<>();
-        Map<Long, List<Long>> ordersMap = new HashMap<>();
-        List<OrderDetails> orderDetails = orderDetailsRepository.getProductsOfTheWeek2(startDate,endDate);
+        Map<Long, Integer> productSalesCount = new HashMap<>(); //object to count the number of times each product was ordered
+        Map<Long, List<Long>> ordersMap = new HashMap<>(); //object to store the list of order Ids for each product
+        List<OrderDetails> orderDetails = orderDetailsRepository.getProductsOfTheWeek2(startDate,endDate); //retrieve the list of OrderDetails objects that fall within the given date
 
         for (OrderDetails detail : orderDetails) {
             Long productId = detail.getProductId();
@@ -199,6 +199,11 @@ public class OrderDetailsService {
             }
             return sortedOrdersMap;
     }
+
+
+
+
+
 
 
 
